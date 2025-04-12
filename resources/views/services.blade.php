@@ -9,6 +9,7 @@
     rel="stylesheet"
   />
   <style>
+    /* services section */
     * {
       margin: 0;
       padding: 0;
@@ -92,6 +93,7 @@
   </style>
 </head>
 <body>
+  {{-- services section --}}
   <div class="container py-4">
     <div class="row g-4 align-items-center">
       <!-- Left Column -->
@@ -104,7 +106,7 @@
           </button>
         </a>
         {{-- {{ route('cybercrime.complaint') }} --}}
-        <a href="#" class="w-100">
+        <a href="{{route('complain')}}" class="w-100">
           <button class="btn-complaint">
             CYBER CRIME COMPLAINT PORTAL <br />
             CLICK HERE TO LODGE A COMPLAINT NOW.

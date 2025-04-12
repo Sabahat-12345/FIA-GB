@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsletterSubscriberController;
+use App\Http\Controllers\ComplainController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 Route::get('/header_section', function () {
     return view('header_section');
 })->name('header_section');
@@ -28,3 +30,12 @@ Route::get('/key_functional', function () {
 Route::get('/footer', function () {
     return view('footer');
 })->name('footer');
+
+Route::post('/subscribe', [NewsletterSubscriberController::class, 'subscribe'])->name('subscribe');
+
+
+Route::get('/complain', function () {
+    return view('complain');
+})->name('complain');
+
+Route::post('/complain', [ComplainController::class, 'store'])->name('complaint.store');

@@ -6,6 +6,7 @@
   <title>Key Functional Units</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* key functional Section */
     .card-section {
       border: 2px solid #dee2e6;
       border-radius: 15px;
@@ -37,7 +38,7 @@
   </style>
 </head>
 <body>
-
+  {{-- key functional Section --}}
 <div class="container my-5">
 
   <!-- Outer border starts here -->

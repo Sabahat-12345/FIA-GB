@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        /* Navbar section */
         * {
             margin: 0;
             padding: 0;
@@ -199,6 +200,7 @@
     </style>
 </head>
 <body>
+    {{-- Navbar Section --}}
     <div class="main-wrapper">
         <!-- Agency Header -->
         <header class="agency-header">
@@ -252,7 +254,7 @@
 
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav w-100 justify-content-between">
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="#">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('home')}}">HOME</a></li>
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">ABOUT US</a></li>
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">WINGS</a></li>
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">SERVICES</a></li>
