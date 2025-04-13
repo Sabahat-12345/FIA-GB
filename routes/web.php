@@ -39,3 +39,16 @@ Route::get('/complain', function () {
 })->name('complain');
 
 Route::post('/complain', [ComplainController::class, 'store'])->name('complaint.store');
+
+
+Route::get('/cell', function () {
+    return view('cell');
+})->name('cell');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/act', function () {
+    return view('act');
+})->name('act');

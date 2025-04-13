@@ -6,6 +6,7 @@
   <title>FIA Section</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    /* header section */
     .fia-bar {
       background-color: #1d2472;
       display: flex;
