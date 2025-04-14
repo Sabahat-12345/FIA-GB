@@ -440,7 +440,7 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav w-100 justify-content-between">
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('home')}}">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link-custom nav-link" href="#">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('about')}}">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">WINGS</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">SERVICES</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">COMPLAINT CELL</a></li>
@@ -505,7 +505,7 @@
           tasked with investigative jurisdiction on undertaking operations against terrorism, espionage, federal crimes,
           smuggling as well as infringement and other specific crimes.
         </p>
-        <a href="#" class="btn btn-primary mt-2">ACT, 1974 (VIII OF 1975)</a>
+        <a href="{{route('act')}}" class="btn btn-primary mt-2">ACT, 1974 (VIII OF 1975)</a>
       </div>
 
     </div>

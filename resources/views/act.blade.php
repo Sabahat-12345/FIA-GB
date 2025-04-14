@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIA Act 1974</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* act section */
     body {
       background-color: #f9f9f9;
       font-size: 0.95rem;
@@ -28,12 +31,13 @@
       margin-top: 20px;
     }
     .offence-list {
-        display: flex;
+      display: flex;
       flex-wrap: wrap;
       gap: 10px;
       background-color: #f8f9fa;
       padding: 15px;
       border-radius: 8px;
+      position: relative;
     }
     .pc-section {
       margin-bottom: 1.5rem;
@@ -41,7 +45,18 @@
       border-left: 3px solid #dee2e6;
     }
     .pc-section-title {
-        font-weight: bold;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .pc-section-title:hover {
+      color: #337ab7;
+      text-decoration: underline;
+    }
+    .pc-section-title a {
+      color: #337ab7;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
     .offence-item {
       background-color: #fff;
@@ -54,22 +69,534 @@
     ol, ul {
       padding-left: 1.2rem;
     }
-    @media (max-width: 576px) {
+    .authority-container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    .authority-title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .authority-list li {
+      margin-bottom: 10px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .act-title {
+        font-size: 1.1rem;
+      }
       .act-container {
         padding: 20px;
+      }
+      .pc-section {
+        padding-left: 0.75rem;
+      }
+      .offence-item {
+        white-space: normal;
+        padding: 6px 10px;
+        font-size: 0.9rem;
+      }
+      .authority-title {
+        font-size: 1.5rem;
+      }
+      .authority-container {
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .act-title {
+        font-size: 1rem;
+      }
+      .act-container {
+        padding: 15px;
       }
       .pc-section {
         padding-left: 0.5rem;
       }
       .offence-list {
-        margin-left: 1rem;
+        padding: 10px;
+      }
+      .authority-title {
+        font-size: 1.3rem;
+        padding: 8px;
+      }
+      .authority-container {
+        padding: 15px;
+      }
+      .offence-item {
+        font-size: 0.85rem;
       }
     }
+    @media (max-width: 576px) {
+    .total-offences-card {
+      min-width: 100px;
+      max-width: 110px;
+      font-size: 0.7rem;
+      position: static !important;
+    }
+    .total-offences-card h6 {
+      font-size: 0.65rem;
+    }
+    .total-offences-card .count {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 577px) {
+    .total-offences-card {
+      min-width: 120px;
+      max-width: 130px;
+    }
+    .total-offences-card h6 {
+      font-size: 0.75rem;
+    }
+    .total-offences-card .count {
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 992px) and (min-width: 792px) {
+    .total-offences-card {
+      position: static !important;
+      margin-top: 10px;
+    }
+  }
+  .pakistan-penal-code-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.85rem;
+}
+
+ /* header section */
+ .fia-bar {
+      background-color: #1d2472;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      align-items: center;
+      /* padding: 0.5rem 1rem; */
+      flex-wrap: nowrap;
+      padding-left: 80px;
+    }
+
+    .fia-bar .nav-link {
+      color: white;
+      text-align: center;
+      padding: 10px 15px;
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+
+    .fia-bar .active {
+      background-color: #0099ff;
+      font-weight: bold;
+    }
+
+    .welcome-link {
+      background-color: #0099ff;
+      font-weight: bold;
+      flex-shrink: 0;
+      z-index: 2;
+   padding: 10px 15px; 
+      /* border-radius: 5px; */ */
+      white-space: nowrap;
+      
+    }
+
+    .scrolling-wrapper {
+      overflow: hidden;
+      flex-grow: 1;
+      margin-left: 20px;
+      mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+    }
+
+    .scrolling-content {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 10s linear infinite;
+    }
+
+    .scrolling-wrapper:hover .scrolling-content {
+      animation-play-state: paused;
+    }
+
+    .scrolling-content .nav-link {
+      margin-right: 50px;
+      font-size: 1rem;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ✅ Only responsive improvements — design unchanged */
+    @media (max-width: 768px) {
+      .fia-bar {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 0px !important;
+      }
+
+      .welcome-link {
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .scrolling-wrapper {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .scrolling-content .nav-link {
+        font-size: 0.95rem;
+        margin-right: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .scrolling-content .nav-link {
+        font-size: 0.85rem;
+        margin-right: 20px;
+      }
+    }
+
+      /* Navbar section */
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }   
+        body {
+            background-color: #f8f9fa;
+
+        }
+        .nav-item {
+    position: relative;
+
+}
+
+
+
+.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 10%;
+    width: 2px;
+    height: 80%;
+    background-color: #212529;
+}
+
+        .main-wrapper {
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff;
+            /* min-width: 778px; */
+        }
+
+        .agency-header {
+            background: #ffffff;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .agency-header .container,
+        .nav-section .container {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .agency-logo {
+            max-height: 90px;
+            width: auto;
+        }
+
+        .title-line {
+            font-size: 1.3rem;
+            color: black;
+            font-weight: bold;
+        }
+
+        .tagline {
+            color: black;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+            white-space: nowrap;
+        }
+
+        .vertical-line {
+            width: 2px;
+            height: 80px;
+            background-color: #1D2472;
+        }
+
+        .nav-section {
+            background: #0099ff;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link-custom {
+            color: #ffffff !important;
+            font-weight: 500;
+            padding: 0.8rem 1.2rem !important;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-link-custom:hover {
+            color: #d4af37 !important;
+        }
+
+        hr {
+            color: #212529;
+            border: 3px solid #1d2472;
+            margin-top: 0px;
+            margin-bottom: 30px;
+        }
+
+        .map-image {
+            max-height: 130px;
+            width: auto;
+            margin-left: 200px;
+        }
+
+        .social-icons {
+            position: absolute;
+            right: 20px;
+            bottom: 5px;
+        }
+
+        .social-icons a {
+            color: #1D2472;
+            font-size: 20px;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .map-image {
+                margin-left: 100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .agency-header {
+                height: auto;
+                padding: 15px 0;
+            }
+            
+
+            .agency-header .container,
+            .nav-section .container {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .map-image {
+                margin-left: 50px;
+                max-height: 110px;
+            }
+
+            .title-line, .tagline {
+                font-size: 1rem;
+            }
+
+            .vertical-line {
+                height: 60px;
+            }
+           
+        }
+        @media (max-width: 1196px) and (min-width: 992px) {
+    .navbar-nav {
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-link-custom {
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.8rem;
+    }
+    
+}
+@media (max-width: 991.98px) {
+    .nav-item:not(:last-child)::after {
+        content: none !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+        position: static !important;
+    }
+}
+
+/* footer section  */
+.bg-primary-custom {
+            background-color: #0275d8;
+        }
+        .bg-dark-blue {
+            background-color: #1a237e;
+        }
+        .section-heading {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .link-light-hover:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            padding: 5px 0;
+        }
+        .map-container {
+            position: relative;
+            height: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .subscribe-form .btn {
+            background-color: white;
+            color: #0275d8;
+        }
+        @media (max-width: 576px) {
+            .subscribe-form .input-group {
+              
+            }
+          
+             
+          
+        }
+
   </style>
 </head>
 <body>
+{{-- header Section --}}
+<div class="container-fluid p-0">
+  <div class="d-flex fia-bar">
+    <div class="welcome-link">WELCOME TO FIA</div>
 
-<div class="container my-5">
+    <div class="scrolling-wrapper w-100">
+      <div class="scrolling-content">
+        {{-- Repeat content for smooth infinite scroll --}}
+        @for ($i = 0; $i < 2; $i++)
+          <a href="{{ asset('pdfs/FIA_SPECTRUM_JULY_SEPTEMBER.PDF') }}" target="_blank" class="nav-link">FIA SPECTRUM (July - September 2024)</a>
+          <a href="{{ asset('pdfs/FIA_SPECTRUM_january_june.pdf') }}" target="_blank" class="nav-link">FIA SPECTRUM (January - June 2024)</a>
+          <a href="{{ asset('pdfs/FIA PERFORMANCE.pdf') }}" target="_blank" class="nav-link">FIA Performance 2024</a>
+        @endfor
+      </div>
+    </div>
+  </div>
+</div>
+
+ {{-- Navbar Section --}}
+ <div class="main-wrapper">
+  <!-- Agency Header -->
+  <header class="agency-header">
+      <div class="container d-flex align-items-center  text-white">
+          <!-- Logo -->
+          <div class="logo-section me-3">
+              <img src="{{asset('asset/logo.png')}}" alt="Agency Logo" class="agency-logo">
+          </div>
+
+          <!-- Title & Tagline Section -->
+          <div class="d-flex align-items-center flex wrap ">
+              <!-- Agency Title -->
+              <div class="text-center agency-title me-4 ">
+                  <div class="title-line">GILGIT BALTISTAN</div>
+                  <div class="title-line">INVESTIGATION</div>
+                  <div class="title-line">AGENCY</div>
+              </div>
+
+              <!-- Vertical Line -->
+              <div class="vertical-line me-4"></div>
+
+              <!-- Tagline -->
+              <div class="tagline align-self-center text-center">
+                  <div>HONESTY</div>
+                  <div>&</div>
+                  <div>INTEGRITY</div>
+              </div>
+          </div>
+
+          <!-- Google Map Image -->
+          <div>
+              <img src="{{asset('asset/google.png')}}" alt="Google Map" class="map-image">
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+      </div>
+  </header>
+
+  <hr>
+
+  <!-- Navigation Section -->
+  <nav class="nav-section navbar navbar-expand-lg">
+      <div class="container">
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+              <ul class="navbar-nav w-100 justify-content-between">
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('home')}}">HOME</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('about')}}">ABOUT US</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">WINGS</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">SERVICES</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">COMPLAINT CELL</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">PUBLIC INFORMATION</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">RELATED</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">CAREERS</a></li>
+                  <li class="nav-item"><a class="nav-link-custom nav-link" href="#">CONTACT US</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>
+
+  {{-- act section --}}
+<div class="container my-3 my-md-5">
   <div class="act-container">
 
     <div class="act-title">
@@ -162,208 +689,343 @@
   <div class="act-container">
     <h3 class="text-center mb-4">SCHEDULE OF FIA ACT, 1974</h3>
     
-    <div class="pc-section ">
-        <div class="pc-section-title ">[1] Offences punishable under sections:</div>
+    <div class="pc-section">
+        <div class="pc-section-title">[1] Offences punishable under sections:</div>
         
-        <div class="offence-list flex-grow-1">
-            <div class="offence-item">a[120-B, 121, 122, 123, 123-A, 124, 124-A]</div>
-            <div class="offence-item">g[161, 162, 163, 164, 165, 165-A, 168, 169]</div>
-            <div class="offence-item">d[175, 182, 183, 186, 187, 188, 189]</div>
-            <div class="offence-item">c[201]</div>
-            <div class="offence-item">e[216]</div>
-            <div class="offence-item">b[217, 218]</div>
-            <div class="offence-item">e[223]</div>
-            <div class="offence-item">d[224, 225]</div>
-            <div class="offence-item">e[225-A]</div>
-            <div class="offence-item">e[245]</div>
-            <div class="offence-item">b[255, 256, 257, 258, 259, 260, 261, 263]</div>
-            <div class="offence-item">f[295-A]</div>
-            <div class="offence-item">x[295-B]</div>
-            <div class="offence-item">f[295-C, 298, 298-A]</div>
-            <div class="offence-item">a[300, 301, 302, 324, 332, 333, 334, 335, 336, 337, 337-A, 337-B, 337-C, 337-D, 337-E, 337-F]</div>
-            <div class="offence-item">d[342, 348]</div>
-            <div class="offence-item">b[353]</div>
-            <div class="offence-item">a[365-A]</div>
-            <div class="offence-item">b[366-B]</div>
-            <div class="offence-item">d[383]</div>
-            <div class="offence-item">b[402-A, 402-B, 402-C, 403, 404]</div>
-            <div class="offence-item">i[406]</div>
-            <div class="offence-item">c[407, 408]</div>
-            <div class="offence-item">h[409]</div>
-            <div class="offence-item">c[411, 418, 419]</div>
-            <div class="offence-item">i[420]</div>
-            <div class="offence-item">a[435, 436, 440]</div>
-            <div class="offence-item">k[462A, 462B, 462C, 462D, 462E, 462F]</div>
-            <div class="offence-item">l[462H, 462I, 462J, 462K, 462L, 462M]</div>
-            <div class="offence-item">d[466]</div>
-            <div class="offence-item">c[467]</div>
-            <div class="offence-item">i[468, 471]</div>
-            <div class="offence-item">c[472]</div>
-            <div class="offence-item">d[473, 474, 475, 476]</div>
-            <div class="offence-item">b[477-A, 489-A, 489-B, 489-C, 489-D, 489-E]</div>
-            <div class="offence-item">j[489-F]</div>
-            <div class="offence-item">d[499, 500, 501, 502]</div>
-            <div class="offence-item">x[505]</div>
-            <div class="offence-item">d[506, 507]</div>
-            <div class="mt-2">,of the Pakistan Penal Code (Act XLV of 1860).</div>
+        <div class="offence-list">
+        
+            <div class="offence-item"><sup>a</sup>[120-B, 121, 122, 123, 123-A, 124, 124-A]</div>
+            <div class="offence-item"><sup>g</sup>[161, 162, 163, 164, 165, 165-A, 168, 169]</div>
+            <div class="offence-item"><sup>d</sup>[175, 182, 183, 186, 187, 188, 189]</div>
+            <div class="offence-item"><sup>c</sup>[201]</div>
+            <div class="offence-item"><sup>e</sup>[216]</div>
+            <div class="offence-item"><sup>b</sup>[217, 218]</div>
+            <div class="offence-item"><sup>e</sup>[223]</div>
+            <div class="offence-item"><sup>d</sup>[224, 225]</div>
+            <div class="offence-item"><sup>e</sup>[225-A]</div>
+            <div class="offence-item"><sup>e</sup>[245]</div>
+            <div class="offence-item"><sup>b</sup>[255, 256, 257, 258, 259, 260, 261, 263]</div>
+            <div class="offence-item"><sup>f</sup>[295-A]</div>
+            <div class="offence-item"><sup>x</sup>[295-B]</div>
+            <div class="offence-item"><sup>f</sup>[295-C, 298, 298-A]</div>
+            <div class="offence-item"><sup>a</sup>[300, 301, 302, 324, 332, 333, 334, 335, 336, 337, 337-A, 337-B, 337-C, 337-D, 337-E, 337-F]</div>
+            <div class="offence-item"><sup>d</sup>[342, 348]</div>
+            <div class="offence-item"><sup>b</sup>[353]</div>
+            <div class="offence-item"><sup>a</sup>[365-A]</div>
+            <div class="offence-item"><sup>b</sup>[366-B]</div>
+            <div class="offence-item"><sup>d</sup>[383]</div>
+            <div class="offence-item"><sup>b</sup>[402-A, 402-B, 402-C, 403, 404]</div>
+            <div class="offence-item"><sup>i</sup>[406]</div>
+            <div class="offence-item"><sup>c</sup>[407, 408]</div>
+            <div class="offence-item"><sup>h</sup>[409]</div>
+            <div class="offence-item"><sup>c</sup>[411, 418, 419]</div>
+            <div class="offence-item"><sup>i</sup>[420]</div>
+            <div class="offence-item"><sup>a</sup>[435, 436, 440]</div>
+            <div class="offence-item"><sup>k</sup>[462A, 462B, 462C, 462D, 462E, 462F]</div>
+            <div class="offence-item"><sup>1</sup>[462H, 462I, 462J, 462K, 462L, 462M]</div>
+            <div class="offence-item"><sup>d</sup>[466]</div>
+            <div class="offence-item"><sup>c</sup>[467]</div>
+            <div class="offence-item"><sup>i</sup>[468, 471]</div>
+            <div class="offence-item"><sup>c</sup>[472]</div>
+            <div class="offence-item"><sup>d</sup>[473, 474, 475, 476]</div>
+            <div class="offence-item"><sup>b</sup>[477-A, 489-A, 489-B, 489-C, 489-D, 489-E]</div>
+            <div class="offence-item"><sup>j</sup>[489-F]</div>
+            <div class="offence-item"><sup>d</sup>[499, 500, 501, 502]</div>
+            <div class="offence-item"><sup>x</sup>[505]</div>
+            <div class="offence-item"><sup>d</sup>[506, 507]</div>
+          
+            <div class="mt-2  pakistan-penal-code-text">,of the Pakistan Penal Code(Act XLV of 1860).</div>
+            <div class="card shadow-sm p-1 mt-3 position-absolute total-offences-card" style="bottom: 0px; right: 10px;">
+              <h6 class="mb-1">Total Offences</h6>
+              <div class="fw-bold text-primary count">117</div>
+            </div>
         </div>
-          <!-- Total Card (right) -->
-          <div class="card shadow-sm p-2" style="min-width: 150px; max-width: 160px;">
-            <h6 class="mb-1">Total Offences</h6>
-            <div class="fw-bold text-primary" style="font-size: 1.5rem;">117</div>
-          </div>    
-       
-
-    <div class="pc-section">
-      <div class="pc-section-title">[1-A] Section25-D and Section 29 of Telegraphic Act. 1885.</div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[2] Offences punishable under the Explosive Substance Act. 1908 (VI of 1908).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/1.pdf')}}" target="_blank"><sup>m</sup>[1-A] Section 25-D and Section 29 of Telegraphic Act, 1885</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[3] Offences punishable under the Official Secret Act. 1923 (XIX of 1923).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/2.pdf')}}" target="_blank"><sup>b</sup>[2] Offences punishable under the Explosive Substance Act, 1908 (VI of 1908).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[4] Offences punishable under the Foreigners Act. 1949 (XXX of 1946).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/3.pdf')}}" target="_blank"><sup>b</sup>[3] Offences punishable under the Official Secret Act, 1923 (XIX of 1923).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[5] Offences punishable under the Prevention of Campaigns Act. 1937 (II of 1947).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/4.pdf')}}" target="_blank"><sup>b</sup>[4] Offences punishable under the Foreigners Act, 1946 (XXXI of 1946).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[6] Offences punishable under the Foreign Exchange Regulation Act. 1947.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/5.pdf')}}" target="_blank"><sup>b</sup>[5] Offences punishable under the Prevention of Corruption Act, 1947 (II of 1947).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[7] Offences punishable under the Import and Export (Control) Act. 1950(XXXIX of 1950).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/6.pdf')}}" target="_blank"><sup>b</sup>[6] Offences punishable under the Foreign Exchange Regulation Act, 1947.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[8] Offences punishable under Banking Companies Ordinance. 1962 (VIII of 1962).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/7.pdf')}}" target="_blank"><sup>b</sup>[7] Offences punishable under the Import and Export (Control) Act, 1950 (XXXIX of 1950).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[9] Offences punishable under the Pakistan Arms Ordinance. 1965 (VIC ont XX of 1965).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/8.pdf')}}" target="_blank"><sup>b</sup>[8] Offences punishable under Banking Companies Ordinance, 1962 (LVII of 1962).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[10] Offences punishable under section the 156 of the Customs Act. 1969(W of 1969).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/9.pdf')}}" target="_blank"><sup>b</sup>[9] Offences punishable under the Pakistan Arms Ordinance, 1965 (W.P. Ord XX of 1965).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[11] Offences punishable under the Foreign Exchange Repatriation Regulation. 1972.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/10.pdf')}}" target="_blank"><sup>b</sup>[10] Offences punishable under section 156 of the Customs Act, 1969 (IV of 1969).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[12] Offences punishable under the Foreign Relations (Declaration) Regulation. 1972.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/11.pdf')}}" target="_blank"><sup>b</sup>[11] Offences punishable under the Foreign Exchange Repatriation Regulation, 1972.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[13] Offences punishable under the National Registered Order Act 1973(M of 1973). (omitted)</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/12.pdf')}}" target="_blank"><sup>b</sup>[12] Offences punishable under the Foreign Assets (Declaration) Regulation, 1972.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[14] Offences punishable under the High Treasury (Fundamental) Act. 1973 (LXVIII of 1973).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/13.pdf')}}" target="_blank"><sup>b</sup>[13] Offences punishable under the National Registration Act, 1973 (LVI of 1973). (Omitted)</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[15] Offences punishable under the Prevention of Anti-National Activities Act.1974 (VII of 1974).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/14.pdf')}}" target="_blank"><sup>b</sup>[14] Offences punishable under the High Treason (Punishment) Act, 1973 (LXVIII of 1973).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[16] Offences punishable under the Polish (National) Union Act. 1974 (XIX of1974).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/15.pdf')}}" target="_blank"><sup>b</sup>[15] Offences punishable under the Prevention of Anti-National Activities Act, 1974 (VII of 1974).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[17] Offences punishable under the Transport Act.1974 (XX of 1974).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/16.pdf')}}" target="_blank"><sup>b</sup>[16] Offences punishable under the Banks (Nationalization) Act, 1974 (XIX of 1974).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[18] Offences punishable under the Drugs Act.1975 (XXXI of 1975).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/17.pdf')}}" target="_blank"><sup>b</sup>[17] Offences punishable under the Passport Act, 1974 (XX of 1974).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[19] Offences punishable under Emigration Ordinance.1979 (XVIII of 1979).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/18.pdf')}}" target="_blank"><sup>b</sup>[18] Offences punishable under the Drugs Act, 1976 (XXXI of 1976).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[20] Offences punishable under the Exit from Pakistan (control) Ordinance.1981(XIII of 1981).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/19.pdf')}}" target="_blank"><sup>b</sup>[19] Offences punishable under Emigration Ordinance, 1979 (XVIII of 1979).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[21] Offences punishable under the Anti-Terreism Act.1997(XXXI of 1997) to the extent of dealing with cases which:</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/20.pdf')}}" target="_blank"><sup>b</sup>[20] Offences punishable under the Exit from Pakistan (Control) Ordinance, 1981 (XLVI of 1981).</a></div>
+    </div>
+    
+    <div class="pc-section">
+      <div class="pc-section-title"><a href="{{asset('pdfs/21.pdf')}}" target="_blank"><sup>n</sup>[21] Offences punishable under the Anti-Terrorism Act, 1997 (XXVII of 1997) to the extent of dealing with cases which:</a></div>
       <div class="offence-list">
-        <div>[1] have inter-provincial scope, or</div>
-        <div>[2] are entrusted to the Agency by the Federal Government</div>
+        <ul style="margin-left: 20px;">
+          <li>[1] have Inter-provincial scope, or</li>
+          <li>[2] are entrusted to the Agency by the Federal Government</li>
+        </ul>
       </div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[23] Offences punishable under the Prevention & Control of Human Trafficking Ordinance 2002.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/22.pdf')}}" target="_blank"><sup>o</sup>[22] Offences punishable under the Prevention & Control of Human Trafficking Ordinance, 2002.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[24] Offences punishable under the Pakistan Recommendation (Re-organization) Act.1989 (XVII of 1989).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/23.pdf')}}" target="_blank"><sup>p</sup>[23] Offences punishable under the Pakistan Telecommunication (Re-organization) Act, 1996 (XVII of 1996).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[25] Offences punishable under the National Database and Registration Authority Ordinance.2002.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/24.pdf')}}" target="_blank"><sup>q</sup>[24] Offences punishable under the National Database and Registration Authority Ordinance, 2002.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[26] Offences punishable under Sections 36 & 37 of the Electronic TransmissionOrdinance.2002 (LL of 2002).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/25.pdf')}}" target="_blank"><sup>r</sup>[25] Offences punishable under Section 36 & 37 of the Electronic Transmission Ordinance, 2002 (LI of 2002).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[27] Offences punishable under the Perceptual Ordinance.1982 (XXXIV of 1982).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/26.pdf')}}" target="_blank"><sup>s</sup>[26] Offences punishable under the Copyright Ordinance, 1962 (XXXIV of 1962).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[28] Offences punishable under the Prevention of Electronic Crime Ordinance 2007.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/27.pdf')}}" target="_blank"><sup>t</sup>[27] Offences punishable under the Prevention of Electronic Crime Ordinance, 2007.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[29] Offences punishable under the Anti-Money Laundering Ordinance.2007 (XLV of 2007).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/28.pdf')}}" target="_blank"><sup>u</sup>[28] Offences punishable under the Anti-Money Laundering Ordinance, 2007 (XLV of 2007).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[30] Offences punishable under the Electricity Act.1910 (IX of 1910).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/29.pdf')}}" target="_blank"><sup>v</sup>[29] Offences punishable under the Electricity Act, 1910 (IX of 1910).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[31] Offences punishable under the Protection of Pakistan Act.2014 (XY 2014).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/30.pdf')}}" target="_blank"><sup>w</sup>[30] Offences punishable under the Protection of Pakistan Act, 2014 (X of 2014).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[32] Offences punishable under the Anti-Money Laundering Act.2010 (VII of 2010).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/31.pdf')}}" target="_blank"><sup>x</sup>[31] Offences punishable under the Anti-Money Laundering Act, 2010 (VII of 2010).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[33] Offences punishable under the Prevention of Electronic Crime Act.2016.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/32.pdf')}}" target="_blank"><sup>I</sup>[32] Offences punishable under the Prevention of Electronic Crime Act, 2016.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[34] Offences punishable under the Transformation of Human Organs and Trustees act.2010.</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/33.pdf')}}" target="_blank"><sup>y</sup>[33] Offences punishable under the Transplantation of Human Organs and Tissues Act, 2010.</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[35] Act.2018 Offences punishable under the Prevention of Smuggling of Majorant (XXXIII of 2018).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/34.pdf')}}" target="_blank"><sup>z</sup>[34] Offences punishable under the Prevention of Smuggling of Migrants Act, 2018 (XXVIII of 2018).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[36] Act.2018 Offences punishable under the Prevention of Trafficking in persons (XXXIV of 2018).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/35.pdf')}}" target="_blank"><sup>z</sup>[35] Offences punishable under the Prevention of Trafficking in Persons Act, 2018 (XXXIV of 2018).</a></div>
     </div>
-
+    
     <div class="pc-section">
-      <div class="pc-section-title">[37] Offences punishable under Public Properties (Removal of Encroachment) Ordinance.2021(ord No. XVI of 2021).</div>
+      <div class="pc-section-title"><a href="{{asset('pdfs/36.pdf')}}" target="_blank"><sup>z/1</sup>[36] Offences punishable under Public Properties (Removal of Encroachment) Ordinance, 2021 (Ord No. XVI of 2021).</a></div>
     </div>
+  </div>
+
+  <div class="authority-container">
+    <div class="authority-title">AUTHORITY</div>
+    <ol class="authority-list">
+      <li>S. R. O. 704 (I)/2004. dated 18 August 2004, [693 (2004)/Ex. Gaz.] [F. No. 4/14/2003-POLL (2)]</li>
+      <li>S. R. O. 826(I)/97 dated 20 September 1997, [No. 1/18/97-FIA.]</li>
+      <li>S. R. O. 113(I)/2002 dated 18 February 2002,[Ex. Gaz.]</li>
+      <li>S. R. O. 381(I)/2012 dated 18 April 2012, [2428/2012/Ex. Gaz.] [No. 7/13/2012-FIA.]</li>
+      <li>S. R. O. 31(KE)/15, dated 22 December 2014, [No. 1/12/2014-FIA]</li>
+      <li>S. R. O. 620(I)/2018, dated 18 May 2018, [5925/2018/Ex. Gaz.] [No. 1/2/2017-FIA]</li>
+      <li>[Entry 161, 162, 163, 164, 165, 165-A, 168, 169 omitted by SRO 702(1) 2004 dated 16.08.2004 PLD 2004 Cent. St. Sup. 649 Inst. By SRO 1097(I)/2008, dated 24.10.2008, PLD 2004-2009 Supp. Fed. St. 125]</li>
+      <li>Section 409 omitted by 702(1) 2004 dated 16.08.2004, PLD 2004 Cent. St. Sup. 649 Inst. By S.R.O 1097(I)/2008, dated 24.10.2008, PLD 2004-2009 Supp. Fed. St. 125.</li>
+      <li>S. R. O. 237(I)/98 dated 10 April 1998, [No. 1/18/97-FIA]</li>
+      <li>S. R. O. 977(I)/2003 dated 9 October 2003, [Ex. Gaz.] [F. No. 1/18/97-FIA.]</li>
+      <li>S. R. O. 67(KE)/2013 dated 03 September 2013, [F. No. 1/4/2013-FIA]</li>
+      <li>S. R. O. 1047(I)/2016 dated 10 November 2016,[2/2016–(FIA.)]</li>
+      <li>S. R. O. 1231(I)/2012 dated 1 October 2012, [3038/2012/Ex. Gaz.] [F. No. 7/13/2012-FIA.]</li>
+      <li>S. R. O. 157(I)/2002 dated 19 March 2002 , [215(2002)/Ex. Gaz.]</li>
+      <li>S. R. O. 741(I)/2002 dated 26 October 2002,[Ex. Gaz.] [F. No. 1/18/97-FIA.]</li>
+      <li>S. R. O. 853(I)/2002 dated 28 November 2002, [1411/2002/Ex. Gaz.] [F. No. 1/12/2000-FIA.]</li>
+      <li>S. R. O. 549(I)/2003 dated 18 June 2003, [4897/2003/Ex. Gaz. [F. No. 1/11/2002-FIA.]</li>
+      <li>S. R. O. 1050(I)/2003 dated 15 November 2003 [F. No. 1/18/97-FIA.]</li>
+      <li>S. R. O. 321(I)/2005 dated 19 April 2005, [2800/2005/Ex. Gaz.] [F. No. 1(1)/2005-FIA.]</li>
+      <li>S. R. O. 206(I)/2008 dated 04 March 2008, [Ex. Gaz.]</li>
+      <li>S. R. O. 1097(I)/2008 dated 21 October 2008, [3120/2008/Ex. Gaz.] [F. No. 1/15/4/2001/FIA]</li>
+      <li>S. R. O. 1/4/2013-FIA dated 24 July 2013 [F. No. 1/3/2013-FIA, dated 16 July 2013]</li>
+      <li>S. R. O. 5(KE)/2016 dated 7 January 2016, [No. 1/5/2015-(FIA)]</li>
+      <li>MOI Notification No. [F.No. 4/242/2022-FIA, dated 3rd November 2022]</li>
+      <li>S. R. O. 353(I)/2017 dated 20 May 2017 [706(2017)/Ex. Gaz.], [No. 1/2017-FIA]</li>
+      <li>MOI Notification No. [F.No. 1/4/2018-FIA dated 23 August, 2021]</li>
+      <li>MOI Notification No. [F.No. 1/4/2018-FIA dated 29th October, 2021]</li>
+    </ol>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ {{-- footer section --}}
+    <div class="container-fluid bg-primary-custom text-white py-3">
+        <div class="container">
+            <div class="row ">
+                <!-- Investigation Links -->
+                <div class=" col-md-4 mb-4">
+                    <div class="section-heading mb-4">
+                        <h6 class="mb-0">WHAT WE INVESTIGATE</h6>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Anti-Corruption</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Anti Human Trafficking and Smuggling</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Counter Terrorism</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Cyber Crime</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Economic Crime</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Immigration</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Interpol</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Intellectual Property Rights</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Integrated Border Management System</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Links + Newsletter -->
+                <div class="col-md-4 mb-4">
+                    <div class="section-heading mb-4">
+                        <h6 class="mb-0">IMPORTANT LINKS</h6>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Wings</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Press Release</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Services</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">FIA Staff Welfare</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Contact Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">FAQs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Sitemap</a></li>
+                        <li><a href="#" class="text-white text-decoration-none link-light-hover">Special Investment Facilitation Council (SIFC)</a></li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <div class="section-heading mb-3">
+                            <h6 class="mb-0">SUBSCRIBE TO OUR NEWSLETTER</h6>
+                        </div>
+                        @if(session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <form action="{{route('subscribe')}}" method="POST" class="subscribe-form" >
+                            @csrf
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your email here" aria-label="Email ">
+                                <button class="btn btn-primary" type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info + Map -->
+                <div class="col-md-4 mb-4">
+                    <div class="section-heading mb-4">
+                        <h6 class="mb-0">CONTACT US</h6>
+                    </div>
+                    <p><strong>Email:</strong> <a href="mailto:complaints@fia.gov.pk" class="text-white">complaints@fia.gov.pk</a></p>
+                    <p><strong>Helpline:</strong> 051-111-345-786</p>
+                    <p><strong>Address:</strong> FIA CYBERCRIME OFFICE NEAR GDA OFFICE RIVER ROAD CHINARBAGH GILGIT, PK</p>
+
+                    <div class="map-container mb-2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103388.79512005721!2d74.16974969726559!3d35.924951400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e637b3c947eca3%3A0xf75e60a3376aef6e!2sFIA%20Cyber%20Crime%20Reporting%20Center!5e0!3m2!1sen!2s!4v1744403607082!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FIA Location Map"></iframe>
+                    </div>
+                    <div class="text-center">
+                        <small>Federal Investigation Agency, Head Office</small><br>
+                        <a href="https://www.google.com/maps?q=FIA+Cyber+Crime+Reporting+Center" target="_blank" class="text-white link-light-hover">
+                            <small>View larger map</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-dark-blue text-white footer">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <small>DISCLAIMER: The information on this site is for official use only and may be subject to change.</small>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small>&copy; 2025 Federal Investigation Agency. All Rights Reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

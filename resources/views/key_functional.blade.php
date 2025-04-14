@@ -69,7 +69,7 @@
         <div class="unit-card">
           <img src="{{asset('asset/Economic Crime Wing.png')}}" alt="Economic Crime Wing" class="unit-icon">
           <h5 class="fw-bold">Economic Crime Wing</h5>
-          <p>Money Laundering, Hundi/ Hawala, Illegal Money or Value Transfer Services (MVTs), STRs/FIRs (Financial Intelligence Reports) & fraud committed in relation with banking business, wilful default matters etc.).</p>
+          <p>Money Laundering, Hundi/ Hawala, Illegal Money or Value Transfer Services (MVTs), STRs/FIRs (Financial Intelligence Reports) & fraud committed in relation with banking business, wilful default matters etc.</p>
         </div>
       </div>
 
