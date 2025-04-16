@@ -41,10 +41,6 @@ Route::get('/complain', function () {
 Route::post('/complain', [ComplainController::class, 'store'])->name('complaint.store');
 
 
-Route::get('/cell', function () {
-    return view('cell');
-})->name('cell');
-
 Route::get('/about', function () {
     return view('about');
 })->name('about');
@@ -52,3 +48,19 @@ Route::get('/about', function () {
 Route::get('/act', function () {
     return view('act');
 })->name('act');
+
+Route::get('/public_portal', function () {
+    return view('public_portal');
+})->name('public_portal');
+
+Route::get('/wings', function () {
+    return view('wings');
+})->name('wings');
+
+Route::get('/anti-corruption', function () {
+    return view('anti-corruption');
+})->name('anti-corruption');
+
+Route::get('/anti-human-trafficking', function () {
+    return view('anti-human-trafficking');
+})->name('anti-human-trafficking');

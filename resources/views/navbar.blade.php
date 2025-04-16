@@ -10,39 +10,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* Navbar section */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }   
+        }
+
         body {
             background-color: #f8f9fa;
-
         }
+
         .nav-item {
-    position: relative;
+            position: relative;
+        }
 
-}
-
-
-
-.nav-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: -10px;
-    top: 10%;
-    width: 2px;
-    height: 80%;
-    background-color: #212529;
-}
+        .nav-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 10%;
+            width: 2px;
+            height: 80%;
+            background-color: #212529;
+        }
 
         .main-wrapper {
             max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: auto;
             background-color: #ffffff;
-            /* min-width: 778px; */
         }
 
         .agency-header {
@@ -51,15 +46,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
             height: 100px;
+            position: relative;
             overflow: hidden;
         }
 
         .agency-header .container,
         .nav-section .container {
-            padding-left: 40px;
-            padding-right: 40px;
+            padding: 0 40px;
         }
 
         .agency-logo {
@@ -107,10 +101,8 @@
         }
 
         hr {
-            color: #212529;
             border: 3px solid #1d2472;
-            margin-top: 0px;
-            margin-bottom: 30px;
+            margin: 0 0 30px 0;
         }
 
         .map-image {
@@ -148,12 +140,10 @@
                 height: auto;
                 padding: 15px 0;
             }
-            
 
             .agency-header .container,
             .nav-section .container {
-                padding-left: 25px;
-                padding-right: 25px;
+                padding: 0 25px;
             }
 
             .map-image {
@@ -168,62 +158,91 @@
             .vertical-line {
                 height: 60px;
             }
-           
         }
+
         @media (max-width: 1196px) and (min-width: 992px) {
-    .navbar-nav {
-        flex-wrap: nowrap !important;
-    }
+            .navbar-nav {
+                flex-wrap: nowrap !important;
+            }
 
-    .nav-link-custom {
-        padding: 0.5rem 0.8rem !important;
-        font-size: 0.8rem;
-    }
-    
-}
-@media (max-width: 991.98px) {
-    .nav-item:not(:last-child)::after {
-        content: none !important;
+            .nav-link-custom {
+                padding: 0.5rem 0.8rem !important;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .nav-item:not(:last-child)::after {
+                content: none !important;
+            }
+        }
+
+        /* @media (max-width: 770px) and (min-width: 300px) {
+            .map-image {
+                position: absolute;
+            }
+        } */
+
+        /* Custom Dropdown Styling */
+        .custom-dropdown {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .custom-dropdown .dropdown-item {
+            color: white;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+
+        .custom-dropdown .dropdown-item:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+
+        .dropdown-menu {
+            transition: all 0.3s ease;
+        }
+        @media (max-width: 796px) {
+    .map-image {
         display: none !important;
-        width: 0 !important;
-        height: 0 !important;
-        background: transparent !important;
-        position: static !important;
     }
 }
 
-
-
-
-
-     
     </style>
 </head>
 <body>
-    {{-- Navbar Section --}}
+    <!-- Navbar Section -->
     <div class="main-wrapper">
         <!-- Agency Header -->
         <header class="agency-header">
-            <div class="container d-flex align-items-center  text-white">
+            <div class="container d-flex align-items-center">
                 <!-- Logo -->
                 <div class="logo-section me-3">
-                    <img src="{{asset('asset/logo.png')}}" alt="Agency Logo" class="agency-logo">
+                    <img src="{{ asset('asset/logo.png') }}" alt="Agency Logo" class="agency-logo">
                 </div>
 
                 <!-- Title & Tagline Section -->
-                <div class="d-flex align-items-center flex wrap ">
-                    <!-- Agency Title -->
-                    <div class="text-center agency-title me-4 ">
+                <div class="d-flex align-items-center flex-wrap">
+                    <div class="text-center agency-title me-4">
                         <div class="title-line">GILGIT BALTISTAN</div>
                         <div class="title-line">INVESTIGATION</div>
                         <div class="title-line">AGENCY</div>
                     </div>
 
-                    <!-- Vertical Line -->
-                    <div class="vertical-line me-4"></div>
+                    <div class="vertical-line me-4 "></div>
 
-                    <!-- Tagline -->
-                    <div class="tagline align-self-center text-center">
+                    <div class="tagline text-center">
                         <div>HONESTY</div>
                         <div>&</div>
                         <div>INTEGRITY</div>
@@ -232,7 +251,7 @@
 
                 <!-- Google Map Image -->
                 <div>
-                    <img src="{{asset('asset/google.png')}}" alt="Google Map" class="map-image">
+                    <img src="{{ asset('asset/google.png') }}" alt="Google Map" class="map-image">
                 </div>
 
                 <!-- Social Media Icons -->
@@ -254,13 +273,65 @@
 
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav w-100 justify-content-between">
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('home')}}">HOME</a></li>
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('about')}}">ABOUT US</a></li>
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="#">WINGS</a></li>
+                        <li class="nav-item"><a class="nav-link-custom nav-link" href="{{ route('home') }}">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link-custom nav-link" href="{{ route('about') }}">ABOUT US</a></li>
+
+                        <!-- WINGS Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link-custom nav-link dropdown-toggle" href="{{route('wings')}}" role="button" data-bs-toggle="dropdown">WINGS</a>
+                            <ul class="dropdown-menu custom-dropdown">
+                                <li><a class="dropdown-item" href="{{route('anti-corruption')}}">Anti Corruption</a></li>
+                                <li><a class="dropdown-item" href="#">Anti Human Trafficking and Smuggling</a></li>
+                                <li><a class="dropdown-item" href="#">Counter Terrorism</a></li>
+                                <li><a class="dropdown-item" href="#">Cyber Crime</a></li>
+                                <li><a class="dropdown-item" href="#">Economic Crime</a></li>
+                                <li><a class="dropdown-item" href="#">FIA Academy</a></li>
+                                <li><a class="dropdown-item" href="#">Law</a></li>
+                                <li><a class="dropdown-item" href="#">Technical</a></li>
+                                <li><a class="dropdown-item" href="#">Immigration</a></li>
+                                <li><a class="dropdown-item" href="#">Interpol</a></li>
+                                <li><a class="dropdown-item" href="#">Intellectual Property Rights</a></li>
+                                <li><a class="dropdown-item" href="#">Integrated Border Management System</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">SERVICES</a></li>
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="#">COMPLAINT CELL</a></li>
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="#">PUBLIC INFORMATION</a></li>
-                        <li class="nav-item"><a class="nav-link-custom nav-link" href="#">RELATED</a></li>
+
+                        <!-- Complaint Cell Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link-custom nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">COMPLAINT CELL</a>
+                            <ul class="dropdown-menu custom-dropdown">
+                                <li><a class="dropdown-item" href="#">Complaint Cell</a></li>
+                                <li><a class="dropdown-item" href="#">Cyber Crime Complaint Cell</a></li>
+                                <li><a class="dropdown-item" href="#">Overseas Pakistanis Complaint Cell</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Public Information Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link-custom nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PUBLIC INFORMATION</a>
+                            <ul class="dropdown-menu custom-dropdown">
+                                <li><a class="dropdown-item" href="#">Gallery</a></li>
+                                <li><a class="dropdown-item" href="#">News</a></li>
+                                <li><a class="dropdown-item" href="#">Information (RTI Act 2017)</a></li>
+                                <li><a class="dropdown-item" href="#">Press Release and Publication</a></li>
+                                <li><a class="dropdown-item" href="#">Laws</a></li>
+                                <li><a class="dropdown-item" href="#">SOP & Rules</a></li>
+                                <li><a class="dropdown-item" href="#">Tenders</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Related Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link-custom nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">RELATED</a>
+                            <ul class="dropdown-menu custom-dropdown">
+                                <li><a class="dropdown-item" href="#">Important Links</a></li>
+                                <li><a class="dropdown-item" href="#">Overseas Pakistanis Foundation</a></li>
+                                <li><a class="dropdown-item" href="#">Travel Guide</a></li>
+                                <li><a class="dropdown-item" href="#">Pensioners Guide</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">CAREERS</a></li>
                         <li class="nav-item"><a class="nav-link-custom nav-link" href="#">CONTACT US</a></li>
                     </ul>
@@ -269,7 +340,8 @@
         </nav>
     </div>
 
-    <!-- Bootstrap JS and Popper.js -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
+</html>

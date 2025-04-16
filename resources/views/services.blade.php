@@ -99,7 +99,7 @@
       <!-- Left Column -->
       <div class="col-lg-3">
         {{-- {{ route('fia.complaint') }} --}}
-        <a href="#" class="w-100">
+        <a href="{{route('public_portal')}}" class="w-100">
           <button class="btn-complaint mb-3">
             FIA COMPLAINT PORTAL <br />
             CLICK HERE TO LODGE A COMPLAINT NOW.
