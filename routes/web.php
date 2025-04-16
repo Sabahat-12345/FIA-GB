@@ -64,3 +64,11 @@ Route::get('/anti-corruption', function () {
 Route::get('/anti-human-trafficking', function () {
     return view('anti-human-trafficking');
 })->name('anti-human-trafficking');
+
+Route::get('/counter-terrorism', function () {
+    return view('counter-terrorism');
+})->name('counter-terrorism');
+
+Route::get('/cyber-crime', function () {
+    return view('cyber-crime');
+})->name('cyber-crime');

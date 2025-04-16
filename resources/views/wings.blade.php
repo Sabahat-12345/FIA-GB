@@ -99,7 +99,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="cyber-crime.html" class="wing-link">
+        <a href="{{route('cyber-crime')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-laptop-code"></i></div>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="anti-human-trafficking.html" class="wing-link">
+        <a href="{{route('anti-human-trafficking')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-users-slash"></i></div>
@@ -176,7 +176,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="counter-terrorism.html" class="wing-link">
+        <a href="{{route('counter-terrorism')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-shield-alt"></i></div>
