@@ -5,8 +5,11 @@ use App\Http\Controllers\NewsletterSubscriberController;
 use App\Http\Controllers\ComplainController;
 
 Route::get('/', function () {
-    return view('home');
+    return view('test.index');
 })->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 Route::get('/header_section', function () {
     return view('header_section');
 })->name('header_section');
@@ -72,3 +75,15 @@ Route::get('/counter-terrorism', function () {
 Route::get('/cyber-crime', function () {
     return view('cyber-crime');
 })->name('cyber-crime');
+
+Route::get('/economic-crime', function () {
+    return view('economic-crime');
+})->name('economic-crime');
+
+Route::get('/important_links', function () {
+    return view('important_links');
+})->name('important_links');
+
+Route::get('/travel_instructions', function () {
+    return view('travel_instructions');
+})->name('travel_instructions');

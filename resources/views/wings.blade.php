@@ -88,7 +88,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="economic-crime.html" class="wing-link">
+        <a href="{{route('economic-crime')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-chart-line"></i></div>

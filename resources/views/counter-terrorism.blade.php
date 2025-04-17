@@ -111,91 +111,96 @@
 
     <!-- More Sections (Same as before) -->
        <!-- Three Information Cards Row -->
-       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
-        <!-- Mandate Card -->
-        <div class="col">
+       <div class="container">
+        <!-- First Row - 3 cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+          <!-- Mandate Card -->
+          <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">MANDATE</h5>
-                    <ul>
-                        <li>To deal in high profile cases entrusted by Government of Pakistan with Transnational element</li>
-                        <li>Terrorism and Terrorist Financing</li>
-                        <li>Cyber Terrorism</li>
-                        <li>Blasphemy</li>
-                        <li>Official Secret Act 1923 (Espionage)</li>
-                    </ul>
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">MANDATE</h5>
+                <ul>
+                  <li>To deal in high profile cases entrusted by Government of Pakistan with Transnational element</li>
+                  <li>Terrorism and Terrorist Financing</li>
+                  <li>Cyber Terrorism</li>
+                  <li>Blasphemy</li>
+                  <li>Official Secret Act 1923 (Espionage)</li>
+                </ul>
+              </div>
             </div>
-        </div>
-        
-        <!-- Operational Units Card -->
-        <div class="col">
+          </div>
+          
+          <!-- Operational Units Card -->
+          <div class="col">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">OPERATIONAL UNITS</h5>
-                    <ul>
-                        <li>Investigation / Operation Unit.</li>
-                        <li>Financial Investigation Unit.</li>
-                        <li>Cyber Terrorism Investigation Unit.</li>
-                        <li>Explosive Analysis Unit.</li>
-                        <li>Field Units:<br>
-                            Islamabad, Karachi, Lahore, Quetta and Peshawar</li>
-                    </ul>
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">OPERATIONAL UNITS</h5>
+                <ul>
+                  <li>Investigation / Operation Unit.</li>
+                  <li>Financial Investigation Unit.</li>
+                  <li>Cyber Terrorism Investigation Unit.</li>
+                  <li>Explosive Analysis Unit.</li>
+                  <li>Field Units:<br>
+                      Islamabad, Karachi, Lahore, Quetta and Peshawar</li>
+                </ul>
+              </div>
             </div>
-        </div>
-        
-        <!-- Investigation/Operation Unit Card -->
-        <div class="col">
+          </div>
+          
+          <!-- Investigation/Operation Unit Card -->
+          <div class="col col-md-12">
             <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">INVESTIGATION/ OPERATION UNIT</h5>
-                    <ul>
-                        <li>Headed by Addl. Director / Deputy Director</li>
-                        <li>Supervision of Enquiries / Cases</li>
-                        <li>Police Station deals with all schedule offences of FIA</li>
-                        <li>Regular Composite Police Station</li>
-                        <li>Seek assistance from other units for enquiries / investigations.</li>
-                    </ul>
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">INVESTIGATION/ OPERATION UNIT</h5>
+                <ul>
+                  <li>Headed by Addl. Director / Deputy Director</li>
+                  <li>Supervision of Enquiries / Cases</li>
+                  <li>Police Station deals with all schedule offences of FIA</li>
+                  <li>Regular Composite Police Station</li>
+                  <li>Seek assistance from other units for enquiries / investigations.</li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      
+        <!-- Second Row - 2 cards -->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Financial Investigation Unit Card -->
+          <div class="col ">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">FINANCIAL INVESTIGATION UNIT</h5>
+                <ul>
+                  <li>Mandate to prevent & combat financial and economic crime throughout Pakistan</li>
+                  <li>Member of the all National Task Forces</li>
+                  <li>Member of AML/CFT desk, collects response/data from operational units/zones on TF/ML/Hawala and shares with FATF Secretariat.</li>
+                  <li>Part of working group which developed National Risk Assessment.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Cyber Terrorism Investigation Unit Card -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">CYBER TERRORISM INVESTIGATION UNIT (CTIU)</h5>
+                <ul>
+                  <li>Headed by Deputy Director Forensic.</li>
+                  <li>Supervise enquiries / investigations related to Cyber Terrorism.</li>
+                  <li>Supervision of Digital Forensic Laboratory.</li>
+                  <li>Maintaining National Criminal Database (NCDB).</li>
+                  <li>Compiling and Publishing RED BOOK of MWTs.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <!-- Two Information Cards Row -->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <!-- Financial Investigation Unit Card -->
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">FINANCIAL INVESTIGATION UNIT</h5>
-                    <ul>
-                        <li>Mandate to prevent & combat financial and economic crime throughout Pakistan</li>
-                        <li>Member of the all National Task Forces</li>
-                        <li>Member of AML/CFT desk, collects response/data from operational units/zones on TF/ML/Hawala and shares with FATF Secretariat.</li>
-                        <li>Part of working group which developed National Risk Assessment.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Cyber Terrorism Investigation Unit Card -->
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">CYBER TERRORISM INVESTIGATION UNIT (CTIU)</h5>
-                    <ul>
-                        <li>Headed by Deputy Director Forensic.</li>
-                        <li>Supervise enquiries / investigations related to Cyber Terrorism.</li>
-                        <li>Supervision of Digital Forensic Laboratory.</li>
-                        <li>Maintaining National Criminal Database (NCDB).</li>
-                        <li>Compiling and Publishing RED BOOK of MWTs.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+   
     <!-- You can keep the remaining sections here (Mandate, Units, etc.) -->
 
     <!-- Achievements Modal -->
