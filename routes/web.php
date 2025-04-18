@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsletterSubscriberController;
 use App\Http\Controllers\ComplainController;
 
-Route::get('/', function () {
-    return view('test.index');
-})->name('home');
 // Route::get('/', function () {
-//     return view('home');
+//     return view('about');
 // })->name('home');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 Route::get('/header_section', function () {
     return view('partial.header_section');
 })->name('header_section');

@@ -1,74 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FIA Wings - Specialized Departments</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --fia-blue: #0056b3;
-      --fia-light-blue: #e6f0ff;
-    }
+@extends('layouts.app',['title' => 'FIA Wings - Specialized Departments'])
+@section('main')
+<style>
+  :root {
+    --fia-blue: #0056b3;
+    --fia-light-blue: #e6f0ff;
+  }
 
-    .fia-theme {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-    }
+  .fia-theme {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+  }
 
-    .wing-link {
-      text-decoration: none;
-      color: inherit;
-    }
+  .wing-link {
+    text-decoration: none;
+    color: inherit;
+  }
 
-    .wing-button {
-      padding: 25px 15px;
-      border: 2px solid var(--fia-blue);
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-      background-color: #fff;
-      transition: all 0.3s ease;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+  .wing-button {
+    padding: 25px 15px;
+    border: 2px solid var(--fia-blue);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
 
-    .wing-button:hover {
-      background-color: var(--fia-light-blue);
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
+  .wing-button:hover {
+    background-color: var(--fia-light-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
 
-    .wing-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--fia-blue);
-    }
+  .wing-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--fia-blue);
+  }
 
-    .section-title {
-      color: var(--fia-blue);
-      position: relative;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-    }
+  .section-title {
+    color: var(--fia-blue);
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
 
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background-color: #ffc107;
-    }
-  </style>
-</head>
-<body class="fia-theme">
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #ffc107;
+  }
+</style>
+
+<section class="fia-theme">
+
 
   <div class="container text-center my-5">
     <h2 class="section-title fw-bold">FIA WINGS</h2>
@@ -210,7 +205,8 @@
 
     </div>
   </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+@endsection
+
