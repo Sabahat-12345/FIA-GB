@@ -87,3 +87,7 @@ Route::get('/important_links', function () {
 Route::get('/travel_instructions', function () {
     return view('travel_instructions');
 })->name('travel_instructions');
+
+Route::get('/fia_acadamy', function () {
+    return view('fia_acadamy');
+})->name('fia_acadamy');

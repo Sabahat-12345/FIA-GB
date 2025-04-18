@@ -296,7 +296,7 @@
                                 <li><a class="dropdown-item" href="{{route('counter-terrorism')}}">Counter Terrorism</a></li>
                                 <li><a class="dropdown-item" href="{{route('cyber-crime')}}">Cyber Crime</a></li>
                                 <li><a class="dropdown-item" href="{{route('economic-crime')}}">Economic Crime</a></li>
-                                <li><a class="dropdown-item" href="#">FIA Academy</a></li>
+                                <li><a class="dropdown-item" href="{{route('fia_acadamy')}}">FIA Academy</a></li>
                                 <li><a class="dropdown-item" href="#">Law</a></li>
                                 <li><a class="dropdown-item" href="#">Technical</a></li>
                                 <li><a class="dropdown-item" href="#">Immigration</a></li>
@@ -337,9 +337,9 @@
                             <a class="nav-link-custom nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">RELATED</a>
                             <ul class="dropdown-menu custom-dropdown">
                                 <li><a class="dropdown-item" href="{{route('important_links')}}">Important Links</a></li>
-                                <li><a class="dropdown-item" href="#">Overseas Pakistanis Foundation</a></li>
+                                <li><a class="dropdown-item" href="http://opf.org.pk/" target="_blank">Overseas Pakistanis Foundation</a></li>
                                 <li><a class="dropdown-item" href="{{route('travel_instructions')}}">Travel Guide</a></li>
-                                <li><a class="dropdown-item" href="#">Pensioners Guide</a></li>
+                                <li><a class="dropdown-item" href="{{asset('pdfs/pensionrules.pdf')}}" target="_blank">Pensioners Guide</a></li>
                             </ul>
                         </li>
 
