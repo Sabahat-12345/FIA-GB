@@ -445,7 +445,7 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav w-100 justify-content-between">
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('home')}}">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link-custom nav-link" href="{{rout('about')}}">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link-custom nav-link" href="{{route('about')}}">ABOUT US</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">WINGS</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">SERVICES</a></li>
                     <li class="nav-item"><a class="nav-link-custom nav-link" href="#">COMPLAINT CELL</a></li>

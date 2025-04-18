@@ -11,11 +11,11 @@ Route::get('/', function () {
 //     return view('home');
 // })->name('home');
 Route::get('/header_section', function () {
-    return view('header_section');
+    return view('partial.header_section');
 })->name('header_section');
 
 Route::get('/navbar', function () {
-    return view('navbar');
+    return view('partial.navbar');
 })->name('navbar');
 
 Route::get('/slider', function () {
@@ -31,7 +31,7 @@ Route::get('/key_functional', function () {
 })->name('key_functional');
 
 Route::get('/footer', function () {
-    return view('footer');
+    return view('partial.footer');
 })->name('footer');
 
 Route::post('/subscribe', [NewsletterSubscriberController::class, 'subscribe'])->name('subscribe');

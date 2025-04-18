@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anti Human Trafficking and Smuggling Wing</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         * {
             box-sizing: border-box;
@@ -14,6 +15,8 @@
         }
         body {
             font-family: Arial, sans-serif;
+            padding: 0px !important;
+            margin: 0px !important;
         }
         .section-title {
             font-weight: bold;
@@ -108,12 +111,19 @@
     border-radius: 10px; /* Optional, for rounded corners */
     padding: 20px; /* Optional, for internal spacing */
 }
+ /* .main-container{
+    margin: 0px !important;
+    padding-left: 0px !important
+
+} */
     </style>
 </head>
 <body>
+  
     @include('partial.header_section')
     {{-- @include('partial.navbar') --}}
-    <div class="container py-4">
+    <section>
+    <div class="container py-4 main-container">
         <!-- Header -->
         <div class="row">
             <div class="col-lg-12">
@@ -534,7 +544,13 @@
         </div>
     </div>
 </div>
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</section>
+@include('partial.footer')
+
+
+
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

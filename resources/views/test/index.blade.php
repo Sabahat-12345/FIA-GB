@@ -14,6 +14,6 @@
     {{-- <h1>this is navbarrrrrr</h1>
     @yield('main')
     <h2>tis is footer</h2> --}}
-    @include('navbar')
+    {{-- @include('navbar') --}}
 </body>
 </html>

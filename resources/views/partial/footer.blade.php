@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federal Investigation Agency (FIA)</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
     <style>
        /* footer section  */
         .bg-primary-custom {
@@ -52,8 +45,8 @@
           
         }
     </style>
-</head>
-<body>
+
+<footer>
     {{-- footer section --}}
     <div class="container-fluid bg-primary-custom text-white py-3">
         <div class="container">
@@ -137,7 +130,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="container-fluid bg-dark-blue text-white footer">
+    <div class="container-fluid bg-dark-blue text-white footer">
         <div class="container py-2">
             <div class="row">
                 <div class="col-md-6">
@@ -148,8 +141,8 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+
+

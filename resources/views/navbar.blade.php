@@ -240,6 +240,58 @@
     }
 }
 
+
+ /* navbar */
+        /* Add this to your existing CSS */
+        .dropdown-menu {
+    /* Make sure text is visible by providing enough contrast */
+    background-color: #007bff !important; /* Light background */
+  
+}
+
+
+
+/* When hovering on dropdown items */
+/* Keep dropdown items blue with white text when clicked/active/focused */
+.dropdown-item:active,
+.dropdown-item.active,
+.dropdown-item:focus,
+.dropdown-menu .active,
+.dropdown-item:hover {
+    background-color: #0069d9 !important; /* Slightly darker blue */
+    color: #fff !important;
+}
+.dropdown-item:active {
+    background-color: #0069d9 !important;
+    color: #fff !important;
+}
+/* Remove outline on focus */
+.dropdown-item:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Make sure the dropdown is visible when shown */
+.navbar .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+/* Reset after click */
+.dropdown-item:focus {
+    background-color: #007bff !important;
+}
+
+/* Override Bootstrap's focus-visible state */
+.dropdown-item:focus-visible {
+    background-color: #007bff !important;
+}
+
+/* Remove outline and box-shadow */
+.dropdown-item:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
     </style>
 </head>
 <body>

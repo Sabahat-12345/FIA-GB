@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gilgit Baltistan Investigation Agency</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         * {
@@ -241,8 +232,7 @@
 }
 
     </style>
-</head>
-<body>
+    <nav>
     <!-- Navbar Section -->
     <div class="main-wrapper">
         <!-- Agency Header -->
@@ -302,10 +292,10 @@
                             <a class="nav-link-custom nav-link dropdown-toggle" href="{{route('wings')}}" role="button" data-bs-toggle="dropdown">WINGS</a>
                             <ul class="dropdown-menu custom-dropdown">
                                 <li><a class="dropdown-item" href="{{route('anti-corruption')}}">Anti Corruption</a></li>
-                                <li><a class="dropdown-item" href="#">Anti Human Trafficking and Smuggling</a></li>
-                                <li><a class="dropdown-item" href="#">Counter Terrorism</a></li>
-                                <li><a class="dropdown-item" href="#">Cyber Crime</a></li>
-                                <li><a class="dropdown-item" href="#">Economic Crime</a></li>
+                                <li><a class="dropdown-item" href="{{route('anti-human-trafficking')}}">Anti Human Trafficking and Smuggling</a></li>
+                                <li><a class="dropdown-item" href="{{route('counter-terrorism')}}">Counter Terrorism</a></li>
+                                <li><a class="dropdown-item" href="{{route('cyber-crime')}}">Cyber Crime</a></li>
+                                <li><a class="dropdown-item" href="{{route('economic-crime')}}">Economic Crime</a></li>
                                 <li><a class="dropdown-item" href="#">FIA Academy</a></li>
                                 <li><a class="dropdown-item" href="#">Law</a></li>
                                 <li><a class="dropdown-item" href="#">Technical</a></li>
@@ -360,9 +350,5 @@
             </div>
         </nav>
     </div>
+</nav>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-</body>
-</html>
