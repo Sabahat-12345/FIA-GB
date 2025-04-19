@@ -91,3 +91,23 @@ Route::get('/travel_instructions', function () {
 Route::get('/fia_acadamy', function () {
     return view('fia_acadamy');
 })->name('fia_acadamy');
+
+Route::get('/law', function () {
+    return view('law');
+})->name('law');
+
+Route::get('/technical', function () {
+    return view('technical');
+})->name('technical');
+
+Route::get('/immigration', function () {
+    return view('immigration');
+})->name('immigration');
+
+Route::get('/interpol', function () {
+    return view('interpol');
+})->name('interpol');
+
+Route::get('/intellectual-property', function () {
+    return view('intellectual-property');
+})->name('intellectual-property');

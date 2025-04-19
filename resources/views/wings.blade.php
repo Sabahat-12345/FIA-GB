@@ -127,7 +127,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="intellectual-property.html" class="wing-link">
+        <a href="{{route('intellectual-property')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-copyright"></i></div>
@@ -138,7 +138,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="immigration.html" class="wing-link">
+        <a href="{{route('immigration')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-passport"></i></div>
@@ -149,7 +149,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="interpol.html" class="wing-link">
+        <a href="{{route('interpol')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-globe-americas"></i></div>
@@ -182,7 +182,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="law.html" class="wing-link">
+        <a href="{{route('law')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-gavel"></i></div>
@@ -193,7 +193,7 @@
       </div>
 
       <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <a href="technical.html" class="wing-link">
+        <a href="{{route('technical')}}" class="wing-link">
           <div class="wing-button">
             <div>
               <div class="wing-icon"><i class="fas fa-microchip"></i></div>

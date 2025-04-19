@@ -30,7 +30,7 @@
     </p>
 
     <div class="row text-center mt-5 g-4">
-      <div class="col-md-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card p-3">
           <h5 class="fw-bold">OUR ACHIEVEMENTS</h5>
           <ul class="text-start">
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card p-3">
           <h5 class="fw-bold">HIERARCHY</h5>
           <p>Click below image to see organogram of FIA Academy</p>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card p-3">
           <h5 class="fw-bold">MANDATE</h5>
           <p>
@@ -69,8 +69,8 @@
     <h4 class="text-center fw-bold my-4">TRAINING PROGRAMS AT FIA ACADEMY</h4>
 
     <div class="row g-4 p-5">
-      <div class="col-md-4">
-        <div class="card p-3 h-100 p-4">
+      <div class="col-md-12 col-lg-4">
+        <div class="card p-3 h-100 ">
           <h6 class="fw-bold">LONG TERM INDUCTION TRAINING COURSES</h6>
           <p>
             Newly recruited officers/officials from Constable to Assistant Director are trained through four to six month courses including basic investigation, prosecution and induction training programs.
@@ -81,19 +81,23 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="card p-3 h-100">
+      <div class="col-md-12 col-lg-4">
+        <div class="card p-3 h-100 d-flex flex-column">
+          <div class="flex-grow-1">
           <h6 class="fw-bold">SHORT TERM CAPACITY BUILDING COURSES</h6>
           <p>
             These are specialized training courses conducted through in-person or online classes for capacity building of FIA officers/officials to meet the needs of the Agency in line with modern techniques.
           </p>
-          <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#shortTermModal">
+          </div>
+          <div class="mt-auto">
+          <button type="button" class="btn btn-primary mt-3 w-100" data-bs-toggle="modal" data-bs-target="#shortTermModal">
             Click to read more
           </button>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card p-3 h-100">
           <h6 class="fw-bold">INTERNATIONAL CAPACITY BUILDING COURSES</h6>
           <p>

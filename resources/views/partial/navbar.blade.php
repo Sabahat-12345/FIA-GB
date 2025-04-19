@@ -297,11 +297,11 @@
                                 <li><a class="dropdown-item" href="{{route('cyber-crime')}}">Cyber Crime</a></li>
                                 <li><a class="dropdown-item" href="{{route('economic-crime')}}">Economic Crime</a></li>
                                 <li><a class="dropdown-item" href="{{route('fia_acadamy')}}">FIA Academy</a></li>
-                                <li><a class="dropdown-item" href="#">Law</a></li>
-                                <li><a class="dropdown-item" href="#">Technical</a></li>
-                                <li><a class="dropdown-item" href="#">Immigration</a></li>
-                                <li><a class="dropdown-item" href="#">Interpol</a></li>
-                                <li><a class="dropdown-item" href="#">Intellectual Property Rights</a></li>
+                                <li><a class="dropdown-item" href="{{route('law')}}">Law</a></li>
+                                <li><a class="dropdown-item" href="{{route('technical')}}">Technical</a></li>
+                                <li><a class="dropdown-item" href="{{route('immigration')}}">Immigration</a></li>
+                                <li><a class="dropdown-item" href="{{route('interpol')}}">Interpol</a></li>
+                                <li><a class="dropdown-item" href="{{route('intellectual-property')}}">Intellectual Property Rights</a></li>
                                 <li><a class="dropdown-item" href="#">Integrated Border Management System</a></li>
                             </ul>
                         </li>
